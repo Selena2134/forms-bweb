@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Collecte de Données</title>
+    <style>
+        /* Style de base pour le corps */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        /* Conteneur principal du formulaire */
+        .form-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        /* Titres */
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 5px;
+        }
+        /* Styles des labels et des champs de texte */
+        label {
+            display: block;
+            font-weight: bold;
+            color: #444;
+            margin-top: 15px;
+        }
+        .input-field, .textarea-field {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .textarea-field {
+            resize: vertical;
+            height: 100px;
+        }
+        /* Styles pour les boutons radio et les cases à cocher */
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .checkbox-group label, .radio-group label {
+            font-weight: normal;
+            color: #555;
+        }
+        /* Champs de notation */
+        .rating-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .rating-field {
+            width: 50px;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        /* Bouton de soumission */
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Formulaire de Collecte de Données</h1>
+
+    <div class="intro-text">
+         L’objectif de ce formulaire est de collecter les données nécessaires pour assurer une formation optimale à l'IFAG en garantissant une équipe à 
+        l’écoute du corps étudiant. 
+    </div>
+
+    <label for="name">Nom, Prénom, Groupe et Filière</label>
+    <input type="text" id="name" class="input-field" placeholder="Entrez vos informations...">
+
+    <p>Le but est avant tout d’assurer l’anonymat de nos participants. En signant ce formulaire, vous autorisez l’accès aux informations à but informatif.</p>
+
+    <h2>Évaluation des Matières</h2>
+    <p>Veuillez évaluer les matières dans lesquelles vous rencontrez des difficultés (1 à 10) :</p>
+
+    <label for="structure-machine">Structure Machine</label>
+    <input type="number" id="structure-machine" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Algorithmique</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Systéme d'exploitation</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Electronique digital</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Bureautique web</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Anglais</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Algébre</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <label for="algorithmique">Analyse</label>
+    <input type="number" id="algorithmique" class="rating-field" min="1" max="10" placeholder="/10">
+
+    <!-- Répétez les champs pour chaque matière -->
+
+    <label for="problems">Pour les matières en dessous de 5/10, quels problèmes rencontrez-vous ?</label>
+    <textarea id="problems" class="textarea-field" placeholder="Décrivez les problèmes..."></textarea>
+
+    <h2>Cause des Difficultés</h2>
+    <div class="radio-group">
+        <input type="radio" id="teacher-issue" name="cause" value="teacher">
+        <label for="teacher-issue">Problème dû à l'enseignant</label>
+        <input type="radio" id="student-issue" name="cause" value="student">
+        <label for="student-issue">Problème dû aux élèves</label>
+    </div>
+    <h2>Si vous considérez que le problème vient de l’enseignant, veuillez précisez la nature des problèmes:</h2>
+    <div class="radio-group">
+        <input type="radio" id="teacher-issue" name="cause" value="teacher">
+        <label for="teacher-issue">difficultés à transmettre l’idée du cours </label><br>
+        <input type="radio" id="student-issue" name="cause" value="student">
+        <label for="student-issue">difficultés à gérer la classe </label><br>
+        <input type="radio" id="student-issue" name="cause" value="student">
+        <label for="student-issue">une quantité de Travaux Dirigés trop conséquente </label><br>
+        <input type="radio" id="student-issue" name="cause" value="student">
+        <label for="student-issue">Autres</label><br>
+    </div>
+   
+    <label for="suggestions">Si le problème est autres: veuillez indiquer sa nature: </label>
+    <textarea id="suggestions" class="textarea-field" placeholder="entrez votre reponse içi "></textarea>
+
+<h2>Quels actions pensez-vous nécessaire afin de réglé le problème : </h2>
+<div class="radio-group">
+    <input type="radio" id="teacher-issue" name="cause" value="teacher">
+    <label for="teacher-issue">Remplacez le prof par un autre d'un autre groupe </label>
+    <input type="radio" id="student-issue" name="cause" value="student">
+    <label for="student-issue">Mettre au courant le prof du problème pour en débattre avec les étudiants </label>
+</div>
+
+<h2>Dans le cas où il s’agit bel est bien des étudiants, veuillez affirmer la nature des problèmes:</h2>
+<div class="radio-group">
+    <input type="radio" id="teacher-issue" name="cause" value="teacher">
+    <label for="teacher-issue">Problèmes de chahut en classe</label>
+</div>
+
+<div class="radio-group">
+    <input type="radio" id="teacher-issue" name="cause" value="teacher">
+    <label for="teacher-issue">Manque de coopérativité de la part des élèves </label>
+</div>
+
+<div class="radio-group">
+    <input type="radio" id="teacher-issue" name="cause" value="teacher">
+    <label for="teacher-issue">Manque de motivation au seins des cours </label>
+</div>
+
+<div class="radio-group">
+    <input type="radio" id="teacher-issue" name="cause" value="teacher">
+    <label for="teacher-issue">Problème d'absence </label>
+</div>
+<div class="radio-group">
+    <input type="radio" id="teacher-issue" name="cause" value="teacher">
+    <label for="teacher-issue">Autres </label>
+</div>
+
+<label for="suggestions">Si le problème est autres: veuillez indiquer sa nature: </label>
+<textarea id="suggestions" class="textarea-field" placeholder="entrez votre reponse içi "></textarea>
+
+<label for="suggestions">Dans le cas d’élèves perturbateur précis, veuillez indiquer les noms et prénoms nécessaires (vous etes assurés d’être annonyme ):</label>
+<textarea id="suggestions" class="textarea-field" placeholder="entrez votre reponse içi "></textarea>
+
+
+
+    <label for="suggestions">Suggestions pour résoudre le problème</label>
+    <textarea id="suggestions" class="textarea-field" placeholder="Indiquez vos suggestions..."></textarea>
+
+    <h1 >Merci pour votre participation!</h1>
+    <button type="submit" class="submit-button">Envoyer</button>
+</div>
+
+</body>
+</html>
